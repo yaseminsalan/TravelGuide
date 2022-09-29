@@ -4,15 +4,17 @@
 
 
 import Foundation
-struct HomeCellViewModel{
+struct FlightsCellViewModel{
     
     var id:Int?
+    var name:String?
     var title:String?
     var category:String?
+    var description:String?
     var image:String?
 }
 
-struct TopPickCellViewModel:Decodable{
+struct Flights:Decodable{
     var albumId:Int?
     var id:Int?
     var title:String?

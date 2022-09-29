@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,11 @@
 		09658A7E28E6212400767815 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09658A7D28E6212400767815 /* DetailViewController.swift */; };
 		09658A8128E622B900767815 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09658A8028E622B900767815 /* DetailViewModel.swift */; };
 		09658A8328E6239D00767815 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09658A8228E6239D00767815 /* DetailModel.swift */; };
+		09D9320628E633CF004D676F /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9320528E633CF004D676F /* FlightsViewController.swift */; };
+		09D9320828E633E4004D676F /* FlightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9320728E633E4004D676F /* FlightsViewModel.swift */; };
+		09D9320A28E633F3004D676F /* FlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9320928E633F3004D676F /* FlightsModel.swift */; };
+		09D9320C28E6340F004D676F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9320B28E6340F004D676F /* Entity.swift */; };
+		09D9320E28E63440004D676F /* FlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9320D28E63440004D676F /* FlightsTableViewCell.swift */; };
 		2DF55996EDA4E8BBC17C9186 /* Pods_TravelGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C8EA5A84FADE896F3DA896 /* Pods_TravelGuide.framework */; };
 		3A0B057887690199E8E18122 /* Pods_TravelGuide_TravelGuideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63F84A69D3F0B824123617B /* Pods_TravelGuide_TravelGuideUITests.framework */; };
 		A036955DAFC0B8F68682DAC0 /* Pods_TravelGuideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF8373A4F3B4AC8750E0105 /* Pods_TravelGuideTests.framework */; };
@@ -70,6 +75,11 @@
 		09658A7D28E6212400767815 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		09658A8028E622B900767815 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		09658A8228E6239D00767815 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		09D9320528E633CF004D676F /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
+		09D9320728E633E4004D676F /* FlightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewModel.swift; sourceTree = "<group>"; };
+		09D9320928E633F3004D676F /* FlightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsModel.swift; sourceTree = "<group>"; };
+		09D9320B28E6340F004D676F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		09D9320D28E63440004D676F /* FlightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsTableViewCell.swift; sourceTree = "<group>"; };
 		0BAD870807AB33CD8D62661C /* Pods-TravelGuide-TravelGuideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelGuide-TravelGuideUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelGuide-TravelGuideUITests/Pods-TravelGuide-TravelGuideUITests.release.xcconfig"; sourceTree = "<group>"; };
 		22C8EA5A84FADE896F3DA896 /* Pods_TravelGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF8373A4F3B4AC8750E0105 /* Pods_TravelGuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelGuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +144,7 @@
 		092646C628E4876C003F06A3 /* TravelGuide */ = {
 			isa = PBXGroup;
 			children = (
+				09D9320428E63399004D676F /* Flights */,
 				09658A7F28E6229200767815 /* Detail */,
 				092646FF28E4ABD6003F06A3 /* Home */,
 				092646C728E4876C003F06A3 /* AppDelegate.swift */,
@@ -187,6 +198,18 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		09D9320428E63399004D676F /* Flights */ = {
+			isa = PBXGroup;
+			children = (
+				09D9320528E633CF004D676F /* FlightsViewController.swift */,
+				09D9320728E633E4004D676F /* FlightsViewModel.swift */,
+				09D9320928E633F3004D676F /* FlightsModel.swift */,
+				09D9320B28E6340F004D676F /* Entity.swift */,
+				09D9320D28E63440004D676F /* FlightsTableViewCell.swift */,
+			);
+			path = Flights;
+			sourceTree = "<group>";
+		};
 		444F0FB910830B3959F7A6E2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,7 +220,6 @@
 				75CB1439C9043694A9D52553 /* Pods-TravelGuideTests.debug.xcconfig */,
 				E8AF19CB213ACD010EDCA306 /* Pods-TravelGuideTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -454,13 +476,18 @@
 				092646FA28E4A7BB003F06A3 /* BookmarksViewController.swift in Sources */,
 				092646FC28E4AB74003F06A3 /* HomeViewModel.swift in Sources */,
 				0926470328E4AC1D003F06A3 /* HomeTopPickCollectionViewCell.swift in Sources */,
+				09D9320C28E6340F004D676F /* Entity.swift in Sources */,
 				092646CC28E4876C003F06A3 /* HomeViewController.swift in Sources */,
 				092646FE28E4AB90003F06A3 /* HomeModel.swift in Sources */,
 				0926470128E4AC00003F06A3 /* Entity.swift in Sources */,
 				092646C828E4876C003F06A3 /* AppDelegate.swift in Sources */,
 				09658A7E28E6212400767815 /* DetailViewController.swift in Sources */,
 				092646F828E4A7A6003F06A3 /* SearchViewController.swift in Sources */,
+				09D9320628E633CF004D676F /* FlightsViewController.swift in Sources */,
+				09D9320E28E63440004D676F /* FlightsTableViewCell.swift in Sources */,
 				09658A8128E622B900767815 /* DetailViewModel.swift in Sources */,
+				09D9320828E633E4004D676F /* FlightsViewModel.swift in Sources */,
+				09D9320A28E633F3004D676F /* FlightsModel.swift in Sources */,
 				092646CA28E4876C003F06A3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,9 +1,7 @@
 //
 //  TravelGuideTests.swift
 //  TravelGuideTests
-//
-//  Created by amarenasoftware on 28.09.2022.
-//
+
 
 import XCTest
 @testable import TravelGuide

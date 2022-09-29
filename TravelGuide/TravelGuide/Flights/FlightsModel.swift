@@ -1,29 +1,30 @@
 //
-//  HomeModel.swift
+//  FlightsModel.swift
 //  TravelGuide
+
 
 import Foundation
 import Alamofire
 //Protocol was used to transfer the data from the API to the viewModel
-protocol HomeModelProtocol:AnyObject{
+protocol FlightsModelProtocol:AnyObject{
     func didFetchProcessFinish(_ isSuccess:Bool)
 }
 
-class HomeModel{
+class FlightsModel{
     //Notifies ViewModel
-    weak var delegate:HomeModelProtocol?
-    var articles:[TopPickCellViewModel] = []
+    weak var delegate:FlightsModelProtocol?
+    var flights:[Flights] = []
     func fetchData(){
          
         
-        AF.request("https://jsonplaceholder.typicode.com/posts").responseDecodable(of:[TopPickCellViewModel].self){(res) in
+        AF.request("https://jsonplaceholder.typicode.com/posts").responseDecodable(of:[Flights].self){(res) in
             
             guard let items = res.value else {
                 self.delegate?.didFetchProcessFinish(false)
                 return
             }
          
-            self.articles = items
+            self.flights = items
             self.delegate?.didFetchProcessFinish(true)
         }
     }

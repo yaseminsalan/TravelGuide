@@ -1,9 +1,7 @@
 //
 //  SceneDelegate.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 28.09.2022.
-//
+
 
 import UIKit
 

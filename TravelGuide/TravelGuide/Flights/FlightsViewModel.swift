@@ -1,22 +1,22 @@
 //
-//  HomeViewModel.swift
+//  FlightsViewModel.swift
 //  TravelGuide
 
 
 import Foundation
 //We notified the View with the delegate structure
-protocol HomeViewModelViewProtocol:AnyObject{
+protocol FlightsViewModelViewProtocol:AnyObject{
     //view e haber verir
     func didCellItemFetch()
     func showEmptyView()
     func hideEmptyView()
     func navigateToDetail(_ id:Int)
 }
-class HomeViewModel{
+class FlightsViewModel{
     //ViewModel has to keep the Model I, for this we created a model list
-    private let model = HomeModel()
+    private let model = FlightsModel()
     
-    weak var viewDelegate:HomeViewModelViewProtocol?
+    weak var viewDelegate:FlightsViewModelViewProtocol?
   
     
     init(){
@@ -32,35 +32,28 @@ class HomeViewModel{
     func numberOfSections()->Int{1}
     
     func numberOfItems()->Int{
-        return model.articles.count
+        return model.flights.count
     }
-    func getModel(at index:Int) -> HomeCellViewModel{
-        return  transformArticleToCellModel(model.articles[index])
+    func getModel(at index:Int) -> FlightsCellViewModel{
+        return  transformFlightsToCellModel(model.flights[index])
     }
     //for the communication of the clicked cells
     func didClickItem(at index:Int){
         //TODO
-        let selectedItem = model.articles[index]
+        let selectedItem = model.flights[index]
         viewDelegate?.navigateToDetail(selectedItem.id!)
         
     }
     //dönüştüme işlemini supfunksiyona atadık
-    private func transformArticleToCellModel(_ article:TopPickCellViewModel)->HomeCellViewModel{
-        return .init(title: article.title,image: article.thumbnailUrl)
+    private func transformFlightsToCellModel(_ flights:Flights)->FlightsCellViewModel{
+        return .init(title:flights.title,category: flights.title)
     }
 }
 
-/*private extension HomeViewModel{
-    //we wanted to say that in some cases I will not use it
-    @discardableResult
-    func makeViewBaseModel(_ articles:[TopPickCellViewModel]) -> [HomeCellViewModel]{
-        //we use it to translate the data from the model into the desired structure of the cell
-        return articles.map{.init(id:$0.id,title: $0.title)}
-    }
-}*/
 
-//MARK:-CommentsModelProtocol
-extension HomeViewModel:HomeModelProtocol{
+
+//MARK:-
+extension FlightsViewModel:FlightsModelProtocol{
     //We'll get word Data's been pulled.
     func didFetchProcessFinish(_ isSuccess: Bool) {
     
