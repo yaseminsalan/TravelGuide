@@ -11,13 +11,13 @@ class HotelsViewController: UIViewController {
    
     
     @IBOutlet weak var hotelsTableView: UITableView!
-    private let viewModel = HotelsViewModel()
+    private let viewModelHotels = HotelsViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel.viewDelegate = self
+        viewModelHotels.viewDelegateHotels = self
         
-        viewModel.didViewLoad()
+        viewModelHotels.didViewLoad()
         // Do any additional setup after loading the view.
     }
     
@@ -28,18 +28,20 @@ private extension HotelsViewController{
     func setupUI(){
         hotelsTableView.delegate = self
         hotelsTableView.dataSource = self
-     
+       
+        navigationController?.navigationBar.topItem!.title = "Hotels"
     }
     
     
 }
 extension HotelsViewController:HotelsViewModelViewProtocol{
-    func navigateToDetail(_ id: Int) {
+    func navigateToDetail(_ detailItem: DetailCellViewModel) {
+ 
         //yönlendirilen sayfa
         
         let vc = DetailViewController()
        
-        let model = DetailModel(id: id)
+        let model = DetailModel(detailItem: detailItem)
         let vm = DetailViewModel(model: model)
         model.viewModel = vm
         vc.viewModel = vm
@@ -69,20 +71,22 @@ extension HotelsViewController:HotelsViewModelViewProtocol{
 }
 extension HotelsViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didClickItem(at:indexPath.row)
+        viewModelHotels.didClickItem(at:indexPath.row)
     }
     
     
 }
 extension HotelsViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfItems()
+        return viewModelHotels.numberOfItems()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotelsCell", for: indexPath) as! HotelsTableViewCell
-   
-        
+        let cellModel = viewModelHotels.getModel(at: indexPath.row)
+      //  cell.decriptionLabel.text = cellModel.title
+        cell.hotelTitle.text = cellModel.title
+        cell.hotelDescription.text = cellModel.description
       
         return cell
     }

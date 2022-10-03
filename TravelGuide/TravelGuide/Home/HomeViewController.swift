@@ -4,6 +4,7 @@
 
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
     
@@ -19,21 +20,28 @@ class HomeViewController: UIViewController {
         if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FlightsStoryboard") as? FlightsViewController
                 {
                     
-            
-                    present(vc, animated: true)
+           // vc.modalPresentationStyle = .fullScreen
+            navigationController?.pushViewController(vc, animated: true)
+                  //  present(vc, animated: true)
                  
                 }
     }
     
     @IBAction func hotelsButton(_ sender: Any) {
         
+        
         if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HotelsStoryboard") as? HotelsViewController
                 {
                     
-            
-                    present(vc, animated: true)
+          //  vc.modalPresentationStyle = .fullScreen
+            navigationController?.pushViewController(vc, animated: true)
                  
                 }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+   
+        navigationController?.navigationItem.title = ""
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,18 +59,22 @@ private extension HomeViewController{
     func setupUI(){
         collectionView.delegate = self
         collectionView.dataSource = self
-     
+       
     }
     
     
 }
 extension HomeViewController:HomeViewModelViewProtocol{
-    func navigateToDetail(_ id: Int) {
+    
+    
+   
+    
+    func navigateToDetail(_ detailItem: DetailCellViewModel) {
         //yönlendirilen sayfa
         
         let vc = DetailViewController()
        
-        let model = DetailModel(id: id)
+        let model = DetailModel(detailItem: detailItem)
         let vm = DetailViewModel(model: model)
         model.viewModel = vm
         vc.viewModel = vm

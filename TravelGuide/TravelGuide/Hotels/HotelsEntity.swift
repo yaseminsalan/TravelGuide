@@ -9,18 +9,40 @@ import Foundation
 struct HotelsCellViewModel{
     
     var id:Int?
-    var name:String?
     var title:String?
     var category:String?
     var description:String?
-    var image:String?
+    var imageUrl:String?
 }
 
-struct Hotels:Decodable{
-    var albumId:Int?
-    var id:Int?
-    var title:String?
-    var url:String?
-    var thumbnailUrl:String?
-   
+
+// MARK: - Hotels
+struct Hotels:Decodable {
+    let term: String?
+    let moresuggestions: Int?
+    let autoSuggestInstance: String?
+    let trackingID: String?
+    let misspellingfallback: Bool?
+    let suggestions: [Suggestion]
+    let geocodeFallback: Bool?
 }
+
+// MARK: - Suggestion
+struct Suggestion:Decodable {
+    let group: String?
+    let entities: [EntityHotel]
+}
+
+// MARK: - Entity
+struct EntityHotel:Decodable {
+    let geoId, destinationId: String?
+    let landmarkCityDestinationId: String?
+    let type: String?
+    let redirectPage: String?
+    let latitude, longitude: Double?
+    let searchDetail: String?
+    let caption:String?
+      let  name: String?
+}
+
+

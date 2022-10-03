@@ -10,7 +10,7 @@ protocol HomeViewModelViewProtocol:AnyObject{
     func didCellItemFetch()
     func showEmptyView()
     func hideEmptyView()
-    func navigateToDetail(_ id:Int)
+    func navigateToDetail(_ detailItem:DetailCellViewModel)
 }
 class HomeViewModel{
     //ViewModel has to keep the Model I, for this we created a model list
@@ -41,7 +41,7 @@ class HomeViewModel{
     func didClickItem(at index:Int){
         //TODO
         let selectedItem = model.articles[index]
-        viewDelegate?.navigateToDetail(selectedItem.id!)
+        viewDelegate?.navigateToDetail(DetailCellViewModel(id:selectedItem.id,title: selectedItem.title,category: "toppick",description: String(selectedItem.albumId!),imageUrl: "",pageCategory: "toppick",bookmarksControl: false))
         
     }
     //dönüştüme işlemini supfunksiyona atadık

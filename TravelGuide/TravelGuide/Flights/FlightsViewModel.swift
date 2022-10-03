@@ -10,7 +10,7 @@ protocol FlightsViewModelViewProtocol:AnyObject{
     func didCellItemFetch()
     func showEmptyView()
     func hideEmptyView()
-    func navigateToDetail(_ id:Int)
+    func navigateToDetail(_ detailItem:DetailCellViewModel)
 }
 class FlightsViewModel{
     //ViewModel has to keep the Model I, for this we created a model list
@@ -41,12 +41,12 @@ class FlightsViewModel{
     func didClickItem(at index:Int){
         //TODO
         let selectedItem = model.flights[index]
-        viewDelegate?.navigateToDetail(selectedItem.id!)
+        viewDelegate?.navigateToDetail(DetailCellViewModel(id:selectedItem.price,title: selectedItem.origin,category: "",description: selectedItem.destination,imageUrl: "",pageCategory: "Flights",bookmarksControl: false))
         
     }
     //dönüştüme işlemini supfunksiyona atadık
-    private func transformFlightsToCellModel(_ flights:Flights)->FlightsCellViewModel{
-        return .init(title:flights.title,category: flights.title)
+    private func transformFlightsToCellModel(_ flights:Datum)->FlightsCellViewModel{
+        return .init(id:flights.price,title: flights.origin,description: flights.destination)
     }
 }
 

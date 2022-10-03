@@ -9,6 +9,13 @@ import UIKit
 
 class HotelsTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var view: UIView!
+    
+    @IBOutlet weak var hotelImage: UIImageView!
+    
+    @IBOutlet weak var hotelDescription: UILabel!
+    @IBOutlet weak var hotelTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

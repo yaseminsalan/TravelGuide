@@ -7,6 +7,11 @@ import UIKit
 
 class FlightsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var flightsDescriptions: UILabel!
+    
+    @IBOutlet weak var flightsTitle: UILabel!
+    
+    @IBOutlet weak var flightsImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
