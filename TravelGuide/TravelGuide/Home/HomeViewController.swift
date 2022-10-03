@@ -11,6 +11,30 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     private let viewModel = HomeViewModel()
   
+    
+    @IBOutlet weak var hotelsButton: UIButton!
+    @IBOutlet weak var flightsButton: UIButton!
+    
+    @IBAction func flightsButton(_ sender: Any) {
+        if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FlightsStoryboard") as? FlightsViewController
+                {
+                    
+            
+                    present(vc, animated: true)
+                 
+                }
+    }
+    
+    @IBAction func hotelsButton(_ sender: Any) {
+        
+        if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HotelsStoryboard") as? HotelsViewController
+                {
+                    
+            
+                    present(vc, animated: true)
+                 
+                }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
