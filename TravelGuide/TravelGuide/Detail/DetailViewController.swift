@@ -35,6 +35,13 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func removeBookmarkButton(_ sender: Any) {
+        viewModel?.didDeleteCoreData()
+        addBookmarkButton.isHidden = false
+        removeBookmarkButton.isHidden = true
+        //tıklama özelliğinim kapatma
+        addBookmarkButton.isUserInteractionEnabled = true
+        //tıklama özelliğinim açma
+        removeBookmarkButton.isUserInteractionEnabled = false
     }
     
     var viewModel:DetailViewModel?

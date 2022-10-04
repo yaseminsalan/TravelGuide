@@ -22,13 +22,16 @@ class DetailModel{
         self.delegate = delegate
         
     }
+ 
     func fetchData(){
         
-       // detailItem.title = "deneme"
-       // detailItem.bookmarksControl = true
-        
-        
-        
+      //coreData ile kayıt edilen verilerin içinde gelen verinin id si aranır var ise buton görünürlüğü ayarlanır
+        if  AppDelegate.sharedAppDelegate.coreDataStack.bookmarkFetchData(id: String(detailItem.id!)){
+            print("***true değeri döndü")
+            detailItem.bookmarksControl = true
+        }else{
+            detailItem.bookmarksControl = false
+        }
         
         
         
@@ -49,4 +52,8 @@ class DetailModel{
         //we save our created object
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
     }
+    func deleteDataWithCoreData(){
+       
+        AppDelegate.sharedAppDelegate.coreDataStack.deleteContext(id: String(detailItem.id!))
+   }
 }

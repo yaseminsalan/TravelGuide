@@ -26,6 +26,9 @@ class DetailViewModel{
     func didSaveCoreData(){
         model.saveDataWithCoreData()
     }
+    func didDeleteCoreData(){
+        model.deleteDataWithCoreData()
+    }
 }
 //MARK:-
 extension DetailViewModel:DetailModelProtocol{

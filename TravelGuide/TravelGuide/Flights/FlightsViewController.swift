@@ -86,7 +86,7 @@ extension FlightsViewController:UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightsCell", for: indexPath) as! FlightsTableViewCell
         let cellModel = viewModel.getModel(at: indexPath.row)
       //  cell.decriptionLabel.text = cellModel.title
-        cell.flightsTitle.text = cellModel.title
+        cell.flightsTitle.text = cellModel.title! + String(cellModel.id!)
         cell.flightsDescriptions.text = cellModel.description
         
       
