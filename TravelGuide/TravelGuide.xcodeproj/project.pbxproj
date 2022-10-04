@@ -17,11 +17,15 @@
 		092646E928E4876F003F06A3 /* TravelGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646E828E4876F003F06A3 /* TravelGuideUITests.swift */; };
 		092646EB28E4876F003F06A3 /* TravelGuideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646EA28E4876F003F06A3 /* TravelGuideUITestsLaunchTests.swift */; };
 		092646F828E4A7A6003F06A3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646F728E4A7A6003F06A3 /* SearchViewController.swift */; };
-		092646FA28E4A7BB003F06A3 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646F928E4A7BB003F06A3 /* BookmarksViewController.swift */; };
 		092646FC28E4AB74003F06A3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646FB28E4AB74003F06A3 /* HomeViewModel.swift */; };
 		092646FE28E4AB90003F06A3 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646FD28E4AB90003F06A3 /* HomeModel.swift */; };
 		0926470128E4AC00003F06A3 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0926470028E4AC00003F06A3 /* Entity.swift */; };
 		0926470328E4AC1D003F06A3 /* HomeTopPickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0926470228E4AC1D003F06A3 /* HomeTopPickCollectionViewCell.swift */; };
+		095880D928ECBCE300F86DBB /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095880D828ECBCE300F86DBB /* BookmarksViewModel.swift */; };
+		095880DB28ECBCFC00F86DBB /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095880DA28ECBCFC00F86DBB /* BookmarksModel.swift */; };
+		095880DD28ECBD1B00F86DBB /* BookmarksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095880DC28ECBD1B00F86DBB /* BookmarksEntity.swift */; };
+		095880DF28ECC6EC00F86DBB /* BookmarksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095880DE28ECC6EC00F86DBB /* BookmarksTableViewCell.swift */; };
+		095880E128ECCB5B00F86DBB /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095880E028ECCB5B00F86DBB /* BookmarksViewController.swift */; };
 		09658A8128E622B900767815 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09658A8028E622B900767815 /* DetailViewModel.swift */; };
 		09658A8328E6239D00767815 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09658A8228E6239D00767815 /* DetailModel.swift */; };
 		09BA72E128EC5BD1006F7717 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA72DF28EC5BD1006F7717 /* DetailViewController.swift */; };
@@ -76,11 +80,15 @@
 		092646E828E4876F003F06A3 /* TravelGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelGuideUITests.swift; sourceTree = "<group>"; };
 		092646EA28E4876F003F06A3 /* TravelGuideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelGuideUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		092646F728E4A7A6003F06A3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		092646F928E4A7BB003F06A3 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		092646FB28E4AB74003F06A3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		092646FD28E4AB90003F06A3 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		0926470028E4AC00003F06A3 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		0926470228E4AC1D003F06A3 /* HomeTopPickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopPickCollectionViewCell.swift; sourceTree = "<group>"; };
+		095880D828ECBCE300F86DBB /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
+		095880DA28ECBCFC00F86DBB /* BookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModel.swift; sourceTree = "<group>"; };
+		095880DC28ECBD1B00F86DBB /* BookmarksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksEntity.swift; sourceTree = "<group>"; };
+		095880DE28ECC6EC00F86DBB /* BookmarksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewCell.swift; sourceTree = "<group>"; };
+		095880E028ECCB5B00F86DBB /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		09658A8028E622B900767815 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		09658A8228E6239D00767815 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		09BA72DF28EC5BD1006F7717 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +182,6 @@
 				092646D228E4876E003F06A3 /* LaunchScreen.storyboard */,
 				092646D528E4876E003F06A3 /* Info.plist */,
 				092646F728E4A7A6003F06A3 /* SearchViewController.swift */,
-				092646F928E4A7BB003F06A3 /* BookmarksViewController.swift */,
 				09BA72E328EC7412006F7717 /* Bookmark.xcdatamodeld */,
 			);
 			path = TravelGuide;
@@ -225,6 +232,11 @@
 			isa = PBXGroup;
 			children = (
 				09BA72E728EC75D2006F7717 /* CoreDataStack.swift */,
+				095880D828ECBCE300F86DBB /* BookmarksViewModel.swift */,
+				095880DA28ECBCFC00F86DBB /* BookmarksModel.swift */,
+				095880DC28ECBD1B00F86DBB /* BookmarksEntity.swift */,
+				095880DE28ECC6EC00F86DBB /* BookmarksTableViewCell.swift */,
+				095880E028ECCB5B00F86DBB /* BookmarksViewController.swift */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -520,7 +532,6 @@
 				09658A8328E6239D00767815 /* DetailModel.swift in Sources */,
 				09BA72E128EC5BD1006F7717 /* DetailViewController.swift in Sources */,
 				09BA72E528EC7413006F7717 /* Bookmark.xcdatamodeld in Sources */,
-				092646FA28E4A7BB003F06A3 /* BookmarksViewController.swift in Sources */,
 				092646FC28E4AB74003F06A3 /* HomeViewModel.swift in Sources */,
 				09DCC4CD28EB288D00E9ED68 /* HotelsViewController.swift in Sources */,
 				0926470328E4AC1D003F06A3 /* HomeTopPickCollectionViewCell.swift in Sources */,
@@ -530,14 +541,19 @@
 				09DCC4CF28EB28ED00E9ED68 /* HotelsTableViewCell.swift in Sources */,
 				0926470128E4AC00003F06A3 /* Entity.swift in Sources */,
 				092646C828E4876C003F06A3 /* AppDelegate.swift in Sources */,
+				095880DD28ECBD1B00F86DBB /* BookmarksEntity.swift in Sources */,
+				095880D928ECBCE300F86DBB /* BookmarksViewModel.swift in Sources */,
 				09DCC4CB28EB286700E9ED68 /* HotelsEntity.swift in Sources */,
 				092646F828E4A7A6003F06A3 /* SearchViewController.swift in Sources */,
+				095880E128ECCB5B00F86DBB /* BookmarksViewController.swift in Sources */,
 				09D9320628E633CF004D676F /* FlightsViewController.swift in Sources */,
 				09D9320E28E63440004D676F /* FlightsTableViewCell.swift in Sources */,
 				09658A8128E622B900767815 /* DetailViewModel.swift in Sources */,
 				09D9320828E633E4004D676F /* FlightsViewModel.swift in Sources */,
 				09BA72E828EC75D2006F7717 /* CoreDataStack.swift in Sources */,
+				095880DB28ECBCFC00F86DBB /* BookmarksModel.swift in Sources */,
 				09DCC4C728EB27AF00E9ED68 /* HotelsViewModel.swift in Sources */,
+				095880DF28ECC6EC00F86DBB /* BookmarksTableViewCell.swift in Sources */,
 				09DCC4C928EB27F200E9ED68 /* HotelsModel.swift in Sources */,
 				09D9320A28E633F3004D676F /* FlightsModel.swift in Sources */,
 				092646CA28E4876C003F06A3 /* SceneDelegate.swift in Sources */,
