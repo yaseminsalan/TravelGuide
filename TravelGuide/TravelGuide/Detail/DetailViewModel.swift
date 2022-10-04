@@ -20,7 +20,12 @@ class DetailViewModel{
     init(model: DetailModel) {
         self.model = model
     }
-   
+    func didViewLoad(){
+        model.fetchData()
+    }
+    func didSaveCoreData(){
+        model.saveDataWithCoreData()
+    }
 }
 //MARK:-
 extension DetailViewModel:DetailModelProtocol{

@@ -78,6 +78,7 @@ extension HomeViewController:HomeViewModelViewProtocol{
         let vm = DetailViewModel(model: model)
         model.viewModel = vm
         vc.viewModel = vm
+        //navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
         
     }

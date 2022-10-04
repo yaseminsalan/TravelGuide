@@ -36,7 +36,7 @@ private extension FlightsViewController{
 }
 extension FlightsViewController:FlightsViewModelViewProtocol{
     func navigateToDetail(_ detailItem: DetailCellViewModel) {
-        //yönlendirilen sayfa
+       
         
         let vc = DetailViewController()
        
@@ -44,6 +44,7 @@ extension FlightsViewController:FlightsViewModelViewProtocol{
         let vm = DetailViewModel(model: model)
         model.viewModel = vm
         vc.viewModel = vm
+       // navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
         
     }

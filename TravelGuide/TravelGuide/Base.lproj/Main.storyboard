@@ -50,13 +50,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AZ-Tc-Cxr">
-                                <rect key="frame" x="0.0" y="44" width="375" height="413"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="339"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unsplash_rsD_jv_A8Yo" translatesAutoresizingMaskIntoConstraints="NO" id="1hp-e7-z8u">
-                                        <rect key="frame" x="-15" y="-42" width="390" height="455"/>
+                                        <rect key="frame" x="-15" y="-42" width="390" height="381"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where’s your next destination?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-wr-HaR">
-                                        <rect key="frame" x="26" y="159" width="254" height="83"/>
+                                        <rect key="frame" x="26" y="85" width="254" height="83"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="83" id="6lt-sV-wIx"/>
                                             <constraint firstAttribute="width" constant="254" id="Vhf-wX-3Y0"/>
@@ -92,7 +92,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-mG-H3V">
-                                        <rect key="frame" x="26" y="358" width="76" height="20"/>
+                                        <rect key="frame" x="26" y="284" width="76" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="3Qv-e9-qWT"/>
                                             <constraint firstAttribute="width" constant="76" id="6S9-Aa-ggd"/>
@@ -102,7 +102,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSm-PE-ZpJ">
-                                        <rect key="frame" x="115" y="358" width="76" height="20"/>
+                                        <rect key="frame" x="115" y="284" width="76" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="76" id="15h-67-1BY"/>
                                             <constraint firstAttribute="height" constant="20" id="hia-dW-woV"/>
@@ -133,7 +133,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-88-dkX">
-                                <rect key="frame" x="0.0" y="449" width="375" height="243"/>
+                                <rect key="frame" x="0.0" y="375" width="375" height="243"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Pink  Articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-kO-Q4P">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
@@ -338,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Btj-9D-lnM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3431.1999999999998" y="-815.44227886056979"/>
+            <point key="canvasLocation" x="4370.3999999999996" y="-815.44227886056979"/>
         </scene>
         <!--Hotels View Controller-->
         <scene sceneID="xFb-Za-R5v">
@@ -432,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axE-AE-os4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4378.3999999999996" y="-168.6656671664168"/>
+            <point key="canvasLocation" x="4370" y="-151"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2wa-Ut-Wpb">

@@ -22,9 +22,12 @@
 		092646FE28E4AB90003F06A3 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646FD28E4AB90003F06A3 /* HomeModel.swift */; };
 		0926470128E4AC00003F06A3 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0926470028E4AC00003F06A3 /* Entity.swift */; };
 		0926470328E4AC1D003F06A3 /* HomeTopPickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0926470228E4AC1D003F06A3 /* HomeTopPickCollectionViewCell.swift */; };
-		09658A7E28E6212400767815 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09658A7D28E6212400767815 /* DetailViewController.swift */; };
 		09658A8128E622B900767815 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09658A8028E622B900767815 /* DetailViewModel.swift */; };
 		09658A8328E6239D00767815 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09658A8228E6239D00767815 /* DetailModel.swift */; };
+		09BA72E128EC5BD1006F7717 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA72DF28EC5BD1006F7717 /* DetailViewController.swift */; };
+		09BA72E228EC5BD1006F7717 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA72E028EC5BD1006F7717 /* DetailViewController.xib */; };
+		09BA72E528EC7413006F7717 /* Bookmark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09BA72E328EC7412006F7717 /* Bookmark.xcdatamodeld */; };
+		09BA72E828EC75D2006F7717 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA72E728EC75D2006F7717 /* CoreDataStack.swift */; };
 		09D9320628E633CF004D676F /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9320528E633CF004D676F /* FlightsViewController.swift */; };
 		09D9320828E633E4004D676F /* FlightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9320728E633E4004D676F /* FlightsViewModel.swift */; };
 		09D9320A28E633F3004D676F /* FlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9320928E633F3004D676F /* FlightsModel.swift */; };
@@ -78,9 +81,12 @@
 		092646FD28E4AB90003F06A3 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		0926470028E4AC00003F06A3 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		0926470228E4AC1D003F06A3 /* HomeTopPickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopPickCollectionViewCell.swift; sourceTree = "<group>"; };
-		09658A7D28E6212400767815 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		09658A8028E622B900767815 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		09658A8228E6239D00767815 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		09BA72DF28EC5BD1006F7717 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		09BA72E028EC5BD1006F7717 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		09BA72E428EC7413006F7717 /* Bookmark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookmark.xcdatamodel; sourceTree = "<group>"; };
+		09BA72E728EC75D2006F7717 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		09D9320528E633CF004D676F /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
 		09D9320728E633E4004D676F /* FlightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewModel.swift; sourceTree = "<group>"; };
 		09D9320928E633F3004D676F /* FlightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsModel.swift; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 		092646C628E4876C003F06A3 /* TravelGuide */ = {
 			isa = PBXGroup;
 			children = (
+				09BA72E628EC75B9006F7717 /* Bookmarks */,
 				09DCC4C528EB270200E9ED68 /* Hotels */,
 				09D9320428E63399004D676F /* Flights */,
 				09658A7F28E6229200767815 /* Detail */,
@@ -168,6 +175,7 @@
 				092646D528E4876E003F06A3 /* Info.plist */,
 				092646F728E4A7A6003F06A3 /* SearchViewController.swift */,
 				092646F928E4A7BB003F06A3 /* BookmarksViewController.swift */,
+				09BA72E328EC7412006F7717 /* Bookmark.xcdatamodeld */,
 			);
 			path = TravelGuide;
 			sourceTree = "<group>";
@@ -204,12 +212,21 @@
 		09658A7F28E6229200767815 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				09658A7D28E6212400767815 /* DetailViewController.swift */,
 				09658A8028E622B900767815 /* DetailViewModel.swift */,
 				09658A8228E6239D00767815 /* DetailModel.swift */,
 				09DCC4D028EB8BAC00E9ED68 /* DetailEntity.swift */,
+				09BA72DF28EC5BD1006F7717 /* DetailViewController.swift */,
+				09BA72E028EC5BD1006F7717 /* DetailViewController.xib */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		09BA72E628EC75B9006F7717 /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				09BA72E728EC75D2006F7717 /* CoreDataStack.swift */,
+			);
+			path = Bookmarks;
 			sourceTree = "<group>";
 		};
 		09D9320428E63399004D676F /* Flights */ = {
@@ -371,6 +388,7 @@
 				092646D428E4876E003F06A3 /* LaunchScreen.storyboard in Resources */,
 				092646D128E4876E003F06A3 /* Assets.xcassets in Resources */,
 				092646CF28E4876C003F06A3 /* Main.storyboard in Resources */,
+				09BA72E228EC5BD1006F7717 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +518,8 @@
 			files = (
 				09DCC4D128EB8BAC00E9ED68 /* DetailEntity.swift in Sources */,
 				09658A8328E6239D00767815 /* DetailModel.swift in Sources */,
+				09BA72E128EC5BD1006F7717 /* DetailViewController.swift in Sources */,
+				09BA72E528EC7413006F7717 /* Bookmark.xcdatamodeld in Sources */,
 				092646FA28E4A7BB003F06A3 /* BookmarksViewController.swift in Sources */,
 				092646FC28E4AB74003F06A3 /* HomeViewModel.swift in Sources */,
 				09DCC4CD28EB288D00E9ED68 /* HotelsViewController.swift in Sources */,
@@ -511,12 +531,12 @@
 				0926470128E4AC00003F06A3 /* Entity.swift in Sources */,
 				092646C828E4876C003F06A3 /* AppDelegate.swift in Sources */,
 				09DCC4CB28EB286700E9ED68 /* HotelsEntity.swift in Sources */,
-				09658A7E28E6212400767815 /* DetailViewController.swift in Sources */,
 				092646F828E4A7A6003F06A3 /* SearchViewController.swift in Sources */,
 				09D9320628E633CF004D676F /* FlightsViewController.swift in Sources */,
 				09D9320E28E63440004D676F /* FlightsTableViewCell.swift in Sources */,
 				09658A8128E622B900767815 /* DetailViewModel.swift in Sources */,
 				09D9320828E633E4004D676F /* FlightsViewModel.swift in Sources */,
+				09BA72E828EC75D2006F7717 /* CoreDataStack.swift in Sources */,
 				09DCC4C728EB27AF00E9ED68 /* HotelsViewModel.swift in Sources */,
 				09DCC4C928EB27F200E9ED68 /* HotelsModel.swift in Sources */,
 				09D9320A28E633F3004D676F /* FlightsModel.swift in Sources */,
@@ -868,6 +888,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		09BA72E328EC7412006F7717 /* Bookmark.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				09BA72E428EC7413006F7717 /* Bookmark.xcdatamodel */,
+			);
+			currentVersion = 09BA72E428EC7413006F7717 /* Bookmark.xcdatamodel */;
+			path = Bookmark.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 092646BC28E4876C003F06A3 /* Project object */;
 }
