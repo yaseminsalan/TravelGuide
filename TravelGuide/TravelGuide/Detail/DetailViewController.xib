@@ -13,6 +13,7 @@
                 <outlet property="addBookmarkButton" destination="Myi-na-yHq" id="ij2-Nb-t7n"/>
                 <outlet property="categoryLabel" destination="vjE-0S-rb7" id="ldc-lX-mc6"/>
                 <outlet property="descriptionLabel" destination="zJa-nL-Ihx" id="cHA-2Z-IVZ"/>
+                <outlet property="detailImage" destination="b5H-Yi-iAO" id="6PL-iN-WYP"/>
                 <outlet property="removeBookmarkButton" destination="ftD-mN-r0d" id="Wz9-P4-Eak"/>
                 <outlet property="titleLabel" destination="MtC-40-caY" id="6Jn-4r-Aby"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -115,7 +116,7 @@
                 <constraint firstItem="ftD-mN-r0d" firstAttribute="top" secondItem="zJa-nL-Ihx" secondAttribute="bottom" constant="8" symbolic="YES" id="0bj-pv-fBk"/>
                 <constraint firstItem="vjE-0S-rb7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="16F-qR-CP1"/>
                 <constraint firstItem="b5H-Yi-iAO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="15" id="4Tf-IK-dCn"/>
-                <constraint firstItem="Myi-na-yHq" firstAttribute="firstBaseline" secondItem="zJa-nL-Ihx" secondAttribute="baseline" constant="35.5" symbolType="layoutAnchor" id="Fcg-i3-idW"/>
+                <constraint firstItem="Myi-na-yHq" firstAttribute="firstBaseline" secondItem="zJa-nL-Ihx" secondAttribute="baseline" constant="42.5" symbolType="layoutAnchor" id="Fcg-i3-idW"/>
                 <constraint firstItem="b5H-Yi-iAO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GMf-1O-7CZ"/>
                 <constraint firstItem="ftD-mN-r0d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="34" id="Gq3-gP-wtB"/>
                 <constraint firstItem="lJQ-X8-xSy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Juv-25-aVA"/>

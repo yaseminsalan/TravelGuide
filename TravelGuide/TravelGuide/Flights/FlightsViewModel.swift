@@ -41,12 +41,12 @@ class FlightsViewModel{
     func didClickItem(at index:Int){
         //TODO
         let selectedItem = model.flights[index]
-        viewDelegate?.navigateToDetail(DetailCellViewModel(id:selectedItem.price,title: selectedItem.origin,category: "",description: selectedItem.destination,imageUrl: "",pageCategory: "Flights",bookmarksControl: false))
+        viewDelegate?.navigateToDetail(DetailCellViewModel(id:selectedItem.price,title: selectedItem.origin,category: "",description: selectedItem.destination,imageUrl:selectedItem.imageUrl,pageCategory: "Flights",bookmarksControl: false))
         
     }
     //dönüştüme işlemini supfunksiyona atadık
     private func transformFlightsToCellModel(_ flights:Datum)->FlightsCellViewModel{
-        return .init(id:flights.price,title: flights.origin,description: flights.destination)
+        return .init(id:flights.price,title: flights.origin,description: flights.destination,imageUrl: flights.imageUrl)
     }
 }
 

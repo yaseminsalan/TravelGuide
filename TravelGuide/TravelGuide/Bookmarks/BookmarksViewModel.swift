@@ -43,12 +43,12 @@ class BookmarksViewModel{
     func didClickItem(at index:Int){
         //TODO
         let selectedItem = modelBookmarks.bookmarksList[index]
-        viewDelegateBookmarks?.navigateToDetail(DetailCellViewModel(id:selectedItem.id!,title: selectedItem.title,category: selectedItem.category,description: selectedItem.description,imageUrl: "",pageCategory: "Bookmarks",bookmarksControl: false))
+        viewDelegateBookmarks?.navigateToDetail(DetailCellViewModel(id:selectedItem.id!,title: selectedItem.title,category: selectedItem.category,description: selectedItem.description,imageUrl: selectedItem.imageUrl,pageCategory: "Bookmarks",bookmarksControl: false))
         
     }
     //dönüştüme işlemini supfunksiyona atadık
     private func transformBookmarksToCellModel(_ bookmarks:BookmarksCellViewModel)->BookmarksCellViewModel{
-        return .init(id: bookmarks.id,title: bookmarks.title,category: bookmarks.category,description: bookmarks.description,imageUrl: bookmarks.imageUrl,date: bookmarks.date)
+        return .init(id: bookmarks.id,title: bookmarks.title,category: bookmarks.category,description: bookmarks.description,imageUrl:bookmarks.imageUrl,date: bookmarks.date)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0907843228EE1FE200153F47 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907843128EE1FE200153F47 /* Extensions.swift */; };
 		092646C828E4876C003F06A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646C728E4876C003F06A3 /* AppDelegate.swift */; };
 		092646CA28E4876C003F06A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646C928E4876C003F06A3 /* SceneDelegate.swift */; };
 		092646CC28E4876C003F06A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092646CB28E4876C003F06A3 /* HomeViewController.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0907843128EE1FE200153F47 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		092646C428E4876C003F06A3 /* TravelGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		092646C728E4876C003F06A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		092646C928E4876C003F06A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0907843028EE1FAC00153F47 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0907843128EE1FE200153F47 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		092646BB28E4876C003F06A3 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		092646C628E4876C003F06A3 /* TravelGuide */ = {
 			isa = PBXGroup;
 			children = (
+				0907843028EE1FAC00153F47 /* Helpers */,
 				09BA72E628EC75B9006F7717 /* Bookmarks */,
 				09DCC4C528EB270200E9ED68 /* Hotels */,
 				09D9320428E63399004D676F /* Flights */,
@@ -553,6 +564,7 @@
 				09BA72E828EC75D2006F7717 /* CoreDataStack.swift in Sources */,
 				095880DB28ECBCFC00F86DBB /* BookmarksModel.swift in Sources */,
 				09DCC4C728EB27AF00E9ED68 /* HotelsViewModel.swift in Sources */,
+				0907843228EE1FE200153F47 /* Extensions.swift in Sources */,
 				095880DF28ECC6EC00F86DBB /* BookmarksTableViewCell.swift in Sources */,
 				09DCC4C928EB27F200E9ED68 /* HotelsModel.swift in Sources */,
 				09D9320A28E633F3004D676F /* FlightsModel.swift in Sources */,

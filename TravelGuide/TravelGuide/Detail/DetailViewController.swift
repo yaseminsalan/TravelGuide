@@ -12,7 +12,9 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var removeBookmarkButton: UIButton!
     
+  
     
+    @IBOutlet weak var detailImage: UIImageView!
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -61,13 +63,11 @@ private extension DetailViewController{
        
         navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = true
+        detailImage.image = UIImage(named: (viewModel?.model.detailItem.imageUrl)!)
         descriptionLabel.text = viewModel?.model.detailItem.description
         titleLabel.text = viewModel?.model.detailItem.title
         categoryLabel.text = viewModel?.model.detailItem.category ?? ""
         if ((viewModel?.model.detailItem.bookmarksControl) == true){
-            print("kontrol\(viewModel?.model.detailItem.bookmarksControl)")
-         
-            
             addBookmarkButton.isHidden = true
             removeBookmarkButton.isHidden = false
             //tıklama özelliğinim kapatma

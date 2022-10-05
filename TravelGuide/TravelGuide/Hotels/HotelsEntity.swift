@@ -42,7 +42,8 @@ struct EntityHotel:Decodable {
     let latitude, longitude: Double?
     let searchDetail: String?
     let caption:String?
-      let  name: String?
+    let name: String?
+    let imageUrl:String?
 }
 
 

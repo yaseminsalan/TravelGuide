@@ -44,6 +44,7 @@ extension FlightsViewController:FlightsViewModelViewProtocol{
         let vm = DetailViewModel(model: model)
         model.viewModel = vm
         vc.viewModel = vm
+        vc.modalPresentationStyle = .fullScreen
        // navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
         
@@ -71,6 +72,7 @@ extension FlightsViewController:FlightsViewModelViewProtocol{
 }
 extension FlightsViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
         viewModel.didClickItem(at:indexPath.row)
     }
     
@@ -89,7 +91,7 @@ extension FlightsViewController:UITableViewDataSource{
         cell.flightsTitle.text = cellModel.title! + String(cellModel.id!)
         cell.flightsDescriptions.text = cellModel.description
         
-      
+        cell.flightsImage.image = UIImage(named: cellModel.imageUrl!)
         return cell
     }
     

@@ -43,12 +43,12 @@ class HotelsViewModel{
     func didClickItem(at index:Int){
         //TODO
         let selectedItem = modelHotels.hotels[index]
-        viewDelegateHotels?.navigateToDetail(DetailCellViewModel(id:Int(selectedItem.destinationId!),title: selectedItem.name,category: selectedItem.type,description: selectedItem.caption,imageUrl: "",pageCategory: "Hotels",bookmarksControl: false))
+        viewDelegateHotels?.navigateToDetail(DetailCellViewModel(id:Int(selectedItem.destinationId!),title: selectedItem.name,category: selectedItem.type,description: selectedItem.caption,imageUrl:selectedItem.imageUrl,pageCategory: "Hotels",bookmarksControl: false))
         
     }
     //dönüştüme işlemini supfunksiyona atadık
     private func transformHotelsToCellModel(_ hotels:EntityHotel)->HotelsCellViewModel{
-        return .init(id:Int(hotels.destinationId!),title:hotels.name,category: hotels.type,description: hotels.caption)
+        return .init(id:Int(hotels.destinationId!),title:hotels.name,category: hotels.type,description: hotels.caption,imageUrl: hotels.imageUrl)
     }
 }
 

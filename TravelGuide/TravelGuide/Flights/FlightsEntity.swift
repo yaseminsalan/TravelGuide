@@ -4,6 +4,7 @@
 
 
 import Foundation
+
 struct FlightsCellViewModel{
     var id:Int?
     var title:String?
@@ -12,31 +13,25 @@ struct FlightsCellViewModel{
     var imageUrl:String?
 }
 
-struct Flights:Decodable{
-    var albumId:Int?
-    var id:Int?
-    var title:String?
-    var url:String?
-    var thumbnailUrl:String?
-   
-}
+
 // MARK: - Welcome10
-struct Welcome10:Decodable {
-    let success: Bool?
-    let data: [String: Datum]?
-    let currency: String?
+struct Flights:Decodable {
+    var success: Bool?
+    var data: [String: Datum]?
+    var currency: String?
 }
 
 // MARK: - Datum
 struct Datum:Decodable {
-    let origin: String?
-    let destination: String?
-    let price: Int?
-    let airline: String?
-    let flightNumber: Int?
-    let departureAt, returnAt: Date?
-    let transfers: Int?
-    let expiresAt: Date?
+    var origin: String?
+    var destination: String?
+    var price: Int?
+    var airline: String?
+    var flightNumber: Int?
+    var departureAt, returnAt: Date?
+    var transfers: Int?
+    var expiresAt: Date?
+    var imageUrl:String?
 }
 
 

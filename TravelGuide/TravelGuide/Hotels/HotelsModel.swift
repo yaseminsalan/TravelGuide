@@ -24,16 +24,19 @@ class HotelsModel{
             "X-RapidAPI-Host": "hotels4.p.rapidapi.com"
         ]
         AF.request("https://hotels4.p.rapidapi.com/locations/v2/search?query=ankara&locale=tr_TR&currency=Turkey",headers:headers).responseDecodable(of:Hotels.self){(res) in
-            
-            guard let items = res.value else {
-                self.delegate?.didHotelsFetchProcessFinish(false)
-                return
-            }
-            print("deneme\(items.suggestions[1].entities.count)")
-            
-          
+        
            
-            self.hotels = items.suggestions[1].entities
+            
+            if ((res.value?.suggestions[1].entities.count)!>0){
+                for i in 0..<((res.value?.suggestions[1].entities.count)!){
+                    self.hotels.append(EntityHotel(geoId: res.value?.suggestions[1].entities[i].geoId, destinationId: res.value?.suggestions[1].entities[i].destinationId, landmarkCityDestinationId: res.value?.suggestions[1].entities[i].landmarkCityDestinationId, type: res.value?.suggestions[1].entities[i].type, redirectPage: res.value?.suggestions[1].entities[i].redirectPage, latitude: res.value?.suggestions[1].entities[i].latitude, longitude: res.value?.suggestions[1].entities[i].longitude, searchDetail: res.value?.suggestions[1].entities[i].searchDetail, caption: res.value?.suggestions[1].entities[i].caption, name: res.value?.suggestions[1].entities[i].name, imageUrl: String.imageName()))
+                }
+            }
+            else{
+                self.delegate?.didHotelsFetchProcessFinish(false)
+            }
+           
+         
             self.delegate?.didHotelsFetchProcessFinish(true)
         }
     }

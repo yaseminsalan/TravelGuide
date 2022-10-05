@@ -45,6 +45,7 @@ extension HotelsViewController:HotelsViewModelViewProtocol{
         let vm = DetailViewModel(model: model)
         model.viewModel = vm
         vc.viewModel = vm
+        vc.modalPresentationStyle = .fullScreen
         //navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
         
@@ -88,7 +89,7 @@ extension HotelsViewController:UITableViewDataSource{
       //  cell.decriptionLabel.text = cellModel.title
         cell.hotelTitle.text = cellModel.title
         cell.hotelDescription.text = cellModel.description
-      
+        cell.hotelImage.image = UIImage(named: cellModel.imageUrl ?? "Image1" )
         return cell
     }
     
