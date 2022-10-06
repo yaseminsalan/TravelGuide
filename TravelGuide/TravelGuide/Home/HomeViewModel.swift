@@ -41,12 +41,12 @@ class HomeViewModel{
     func didClickItem(at index:Int){
         //TODO
         let selectedItem = model.articles[index]
-        viewDelegate?.navigateToDetail(DetailCellViewModel(id:selectedItem.id,title: selectedItem.title,category: "toppick",description: String(selectedItem.albumId!),imageUrl: "",pageCategory: "toppick",bookmarksControl: false))
+        viewDelegate?.navigateToDetail(DetailCellViewModel(id:123,title: selectedItem.title,category: "toppick",description: String(selectedItem.datumDescription),imageUrl: "",pageCategory: "toppick",bookmarksControl: false))
         
     }
     //dönüştüme işlemini supfunksiyona atadık
-    private func transformArticleToCellModel(_ article:TopPickCellViewModel)->HomeCellViewModel{
-        return .init(title: article.title,image: article.thumbnailUrl)
+    private func transformArticleToCellModel(_ article:ArticlesDatum)->HomeCellViewModel{
+        return .init(title: article.title)
     }
 }
 
