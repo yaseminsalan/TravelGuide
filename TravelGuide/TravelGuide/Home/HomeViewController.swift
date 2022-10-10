@@ -26,15 +26,19 @@ class HomeViewController: UIViewController {
         if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HotelsStoryboard") as? HotelsViewController
                 {
                     
-          //  vc.modalPresentationStyle = .fullScreen
+          
             navigationController?.pushViewController(vc, animated: true)
                  
                 }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-   
-        navigationController?.navigationItem.title = ""
+   print("deneme gerş")
+     //   navigationController?.navigationItem.backButtonTitle = ""
+       // navigationController?.title = " "
+       // navigationController?.navigationItem.title = " "
+        navigationController?.navigationBar.topItem?.title = " "
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

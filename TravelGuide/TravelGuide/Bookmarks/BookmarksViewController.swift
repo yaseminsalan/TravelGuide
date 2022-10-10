@@ -83,6 +83,7 @@ extension BookmarksViewController:UITableViewDataSource{
     
         cell.bookmarksTitle.text = cellModel.title
         cell.bookmarksDescription.text = cellModel.description
+        cell.bookmarksImage.image = UIImage(named: cellModel.imageUrl!)
       
         return cell
     }

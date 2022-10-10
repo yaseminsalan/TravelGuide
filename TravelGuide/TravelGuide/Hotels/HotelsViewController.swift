@@ -25,8 +25,12 @@ private extension HotelsViewController{
     func setupUI(){
         hotelsTableView.delegate = self
         hotelsTableView.dataSource = self
+        let backButton = UIBarButtonItem()
+        backButton.title = "Hotels"
+        backButton.tintColor = .black
+    
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
        
-        navigationController?.navigationBar.topItem!.title = "Hotels"
     }
     
     

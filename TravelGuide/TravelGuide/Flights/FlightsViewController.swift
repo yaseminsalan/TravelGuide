@@ -20,15 +20,19 @@ class FlightsViewController: UIViewController {
         viewModel.didViewLoad()
         // Do any additional setup after loading the view.
     }
+   
     
-
-
 }
 private extension FlightsViewController{
     func setupUI(){
         tableView.delegate = self
         tableView.dataSource = self
-        navigationController?.navigationBar.topItem!.title = "Flights"
+      
+        let backButton = UIBarButtonItem()
+        backButton.title = "Flights"
+       backButton.tintColor = .black
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+  
      
     }
     
