@@ -1,9 +1,7 @@
 //
 //  BookmarksViewModel.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 4.10.2022.
-//
+
 
 import Foundation
 //We notified the View with the delegate structure
@@ -46,7 +44,7 @@ class BookmarksViewModel{
         viewDelegateBookmarks?.navigateToDetail(DetailCellViewModel(id:selectedItem.id!,title: selectedItem.title,category: selectedItem.category,description: selectedItem.description,imageUrl: selectedItem.imageUrl,pageCategory: "Bookmarks",bookmarksControl: false))
         
     }
-    //dönüştüme işlemini supfunksiyona atadık
+    //assign the transform operation to the function
     private func transformBookmarksToCellModel(_ bookmarks:BookmarksCellViewModel)->BookmarksCellViewModel{
         return .init(id: bookmarks.id,title: bookmarks.title,category: bookmarks.category,description: bookmarks.description,imageUrl:bookmarks.imageUrl,date: bookmarks.date)
     }
@@ -54,7 +52,7 @@ class BookmarksViewModel{
 
 
 
-//MARK:-
+//MARK:-BookmarksModelProtocol
 extension BookmarksViewModel:BookmarksModelProtocol{
     func didBookmarksFetchProcessFinish(_ isSuccess: Bool) {
         if isSuccess{

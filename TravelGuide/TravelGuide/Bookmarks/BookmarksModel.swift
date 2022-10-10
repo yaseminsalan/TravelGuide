@@ -1,9 +1,7 @@
 //
 //  BookmarksModel.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 4.10.2022.
-//
+
 
 import Foundation
 import CoreData
@@ -29,7 +27,7 @@ class BookmarksModel{
             for i in 0..<results.count{
                 bookmarksList.append(BookmarksCellViewModel(id: Int(bitPattern: results[i].id),title: results[i].title,category: results[i].category,description: results[i].explanation,imageUrl: results[i].imageURL,date:results[i].date))
             }
-            print("boyut\(bookmarksList.count)")
+           
             self.delegateBookmarks?.didBookmarksFetchProcessFinish(true)
             
         }catch{

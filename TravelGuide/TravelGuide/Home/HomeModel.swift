@@ -12,23 +12,30 @@ protocol HomeModelProtocol:AnyObject{
 class HomeModel{
     //Notifies ViewModel
     weak var delegate:HomeModelProtocol?
-    var articles:[ArticlesDatum] = []
+    var articles:[TopPickCellViewModel] = []
     func fetchData(){
-        print("deneme artıclefonk")
-        let parameters: Parameters = [
-              "access_key": "5a9a6a11f9a68a468b700adfb0ebc7a9",
-              "keywords" : "technology",
-              "countries" :"us,gb,de",
-               
-              ]
         
-        AF.request("http://api.mediastack.com/v1/news?access_key=5a9a6a11f9a68a468b700adfb0ebc7a9&keywords=technology&countries=us,gb,de").responseDecodable(of:Welcomedeneme.self){(res) in
+        let headers:HTTPHeaders = [
+            "X-RapidAPI-Key": "2cb2e127e9msh641ac0e6d2c005ap18d842jsn8b896cdbd0ca",
+            "X-RapidAPI-Host": "public-holiday.p.rapidapi.com"
+        ]
+        AF.request("https://public-holiday.p.rapidapi.com/2020/US",headers:headers).responseDecodable(of:[TopPickCellViewModel].self){ [self](res) in
             
             
-          //  self.articles = res.value?.data ?? []
-            print("deneme artıcle\(res)")
+            if ((res.value!.count)>0){
+                for i in 0..<((res.value?.count)!){
+                    self.articles.append(TopPickCellViewModel(date: res.value![i].date, localName: res.value![i].localName, name: res.value![i].name, countryCode: res.value![i].countryCode, fixed: res.value![i].fixed, global: res.value![i].global, counties: res.value![i].counties, launchYear: res.value![i].launchYear, type: res.value![i].type,imageUrl: String.imageName(),id: UUID().uuidString))
+                }
+            }
+            else{
+                self.delegate?.didFetchProcessFinish(false)
+            }
+           
+         
             self.delegate?.didFetchProcessFinish(true)
         }
     }
- 
+        
+        
+
 }

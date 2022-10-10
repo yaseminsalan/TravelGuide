@@ -1,9 +1,7 @@
 //
 //  SearchEntity.swift
 //  TravelGuide
-//
-//  Created by Amarena Software on 6.10.2022.
-//
+
 
 import Foundation
 struct SearchCellViewModel{

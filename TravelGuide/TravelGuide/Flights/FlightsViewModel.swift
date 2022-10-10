@@ -44,7 +44,7 @@ class FlightsViewModel{
         viewDelegate?.navigateToDetail(DetailCellViewModel(id:selectedItem.price,title: selectedItem.origin,category: "",description: selectedItem.destination,imageUrl:selectedItem.imageUrl,pageCategory: "Flights",bookmarksControl: false))
         
     }
-    //dönüştüme işlemini supfunksiyona atadık
+    //assign the transform operation to the function
     private func transformFlightsToCellModel(_ flights:Datum)->FlightsCellViewModel{
         return .init(id:flights.price,title: flights.origin,description: flights.destination,imageUrl: flights.imageUrl)
     }
@@ -58,8 +58,6 @@ extension FlightsViewModel:FlightsModelProtocol{
     func didFetchProcessFinish(_ isSuccess: Bool) {
     
         if isSuccess{
-          //  let articles = model.articles
-          //  let cellModels = makeViewBaseModel(articles)
             viewDelegate?.didCellItemFetch()
             viewDelegate?.hideEmptyView()
         }

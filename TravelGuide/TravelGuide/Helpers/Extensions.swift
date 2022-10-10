@@ -1,9 +1,7 @@
 //
 //  Extensions.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 5.10.2022.
-//
+
 
 import Foundation
 extension String {

@@ -40,15 +40,8 @@ class FlightsModel{
                 else{
                     self.delegate?.didFetchProcessFinish(false)
                 }
-                
-                
-              
-           
         }
-        
-    
-        
-        
+
         
     }
  

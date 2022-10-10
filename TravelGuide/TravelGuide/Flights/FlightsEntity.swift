@@ -14,7 +14,7 @@ struct FlightsCellViewModel{
 }
 
 
-// MARK: - Welcome10
+
 struct Flights:Decodable {
     var success: Bool?
     var data: [String: Datum]?

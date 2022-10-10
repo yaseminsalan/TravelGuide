@@ -1,14 +1,12 @@
 //
 //  HotelsViewModel.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 3.10.2022.
-//
+
 
 import Foundation
 //We notified the View with the delegate structure
 protocol HotelsViewModelViewProtocol:AnyObject{
-    //view e haber verir
+
     func didCellItemFetch()
     func showEmptyView()
     func hideEmptyView()
@@ -46,7 +44,7 @@ class HotelsViewModel{
         viewDelegateHotels?.navigateToDetail(DetailCellViewModel(id:Int(selectedItem.destinationId!),title: selectedItem.name,category: selectedItem.type,description: selectedItem.caption,imageUrl:selectedItem.imageUrl,pageCategory: "Hotels",bookmarksControl: false))
         
     }
-    //dönüştüme işlemini supfunksiyona atadık
+    //assign the transform operation to the function
     private func transformHotelsToCellModel(_ hotels:EntityHotel)->HotelsCellViewModel{
         return .init(id:Int(hotels.destinationId!),title:hotels.name,category: hotels.type,description: hotels.caption,imageUrl: hotels.imageUrl)
     }
@@ -67,11 +65,6 @@ extension HotelsViewModel:HotelsModelProtocol{
         else{
             viewDelegateHotels?.showEmptyView()
         }
-
-
-        
-
-      
         
     }
 }

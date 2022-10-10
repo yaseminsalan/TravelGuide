@@ -1,9 +1,6 @@
 //
 //  HotelsViewController.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 3.10.2022.
-//
 
 import UIKit
 
@@ -37,7 +34,7 @@ private extension HotelsViewController{
 extension HotelsViewController:HotelsViewModelViewProtocol{
     func navigateToDetail(_ detailItem: DetailCellViewModel) {
  
-        //yönlendirilen sayfa
+   
         
         let vc = DetailViewController()
        
@@ -86,7 +83,6 @@ extension HotelsViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotelsCell", for: indexPath) as! HotelsTableViewCell
         let cellModel = viewModelHotels.getModel(at: indexPath.row)
-      //  cell.decriptionLabel.text = cellModel.title
         cell.hotelTitle.text = cellModel.title
         cell.hotelDescription.text = cellModel.description
         cell.hotelImage.image = UIImage(named: cellModel.imageUrl ?? "Image1" )

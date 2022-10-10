@@ -6,37 +6,23 @@
 import Foundation
 struct HomeCellViewModel{
     
-    var id:Int?
+    var id:String?
     var title:String?
     var category:String?
-    var image:String?
+    var description:String?
+    var imageUrl:String?
 }
 
-struct TopPickCellViewModel:Decodable{
-    var albumId:Int?
-    var id:Int?
-    var title:String?
-    var url:String?
-    var thumbnailUrl:String?
-   
-}
-// MARK: - Welcome10
-struct Welcomedeneme:Decodable {
-    let pagination: Pagination
-    let data: [ArticlesDatum]
+// MARK: -TopPickCellViewModel
+struct TopPickCellViewModel:Decodable {
+    let date, localName, name: String
+    let countryCode: String?
+    let fixed, global: Bool
+    let counties: [String]?
+    let launchYear: Int?
+    let type: String?
+    var imageUrl:String?
+    var id:String?
 }
 
-// MARK: - Datum
-struct ArticlesDatum:Decodable {
-    let author, title, datumDescription: String
-    let url: String
-    let source: String
-    let image: String
-    let category, language, country: String
-    let publishedAt: Date
-}
 
-// MARK: - Pagination
-struct Pagination:Decodable {
-    let limit, offset, count, total: Int
-}

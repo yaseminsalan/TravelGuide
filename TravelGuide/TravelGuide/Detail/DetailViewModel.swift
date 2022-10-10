@@ -7,10 +7,8 @@ import Foundation
 
 //We notified the View with the delegate structure
 protocol DetailViewModelViewProtocol:AnyObject{
-    //view e haber verir
+    //informs view
     func didCellItemFetch()
-    func showEmptyView()
-    func hideEmptyView()
 
 }
 class DetailViewModel{
@@ -39,10 +37,10 @@ extension DetailViewModel:DetailModelProtocol{
         if isSuccess{
         
             viewDelegateDetail?.didCellItemFetch()
-            viewDelegateDetail?.hideEmptyView()
+           
         }
         else{
-            viewDelegateDetail?.showEmptyView()
+         
         }
 
 

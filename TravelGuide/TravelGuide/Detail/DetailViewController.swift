@@ -1,21 +1,14 @@
 //
 //  DetailViewController.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 4.10.2022.
-//
+
 
 import UIKit
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var addBookmarkButton: UIButton!
-    
     @IBOutlet weak var removeBookmarkButton: UIButton!
-    
-  
-    
     @IBOutlet weak var detailImage: UIImageView!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -30,9 +23,9 @@ class DetailViewController: UIViewController {
         
         addBookmarkButton.isHidden = true
         removeBookmarkButton.isHidden = false
-        //tıklama özelliğinim kapatma
+        //turn off the click feature
         addBookmarkButton.isUserInteractionEnabled = false
-        //tıklama özelliğinim açma
+        //turn on my click feature
         removeBookmarkButton.isUserInteractionEnabled = true
     }
     
@@ -40,9 +33,9 @@ class DetailViewController: UIViewController {
         viewModel?.didDeleteCoreData()
         addBookmarkButton.isHidden = false
         removeBookmarkButton.isHidden = true
-        //tıklama özelliğinim kapatma
+        //turn off the click feature
         addBookmarkButton.isUserInteractionEnabled = true
-        //tıklama özelliğinim açma
+        //turn on my click feature
         removeBookmarkButton.isUserInteractionEnabled = false
     }
     
@@ -70,17 +63,17 @@ private extension DetailViewController{
         if ((viewModel?.model.detailItem.bookmarksControl) == true){
             addBookmarkButton.isHidden = true
             removeBookmarkButton.isHidden = false
-            //tıklama özelliğinim kapatma
+            //turn off the click feature
             addBookmarkButton.isUserInteractionEnabled = false
-            //tıklama özelliğinim açma
+            //turn on my click feature
             removeBookmarkButton.isUserInteractionEnabled = true
            
         }else{
             addBookmarkButton.isHidden = false
             removeBookmarkButton.isHidden = true
-            //tıklama özelliğinim kapatma
+            //turn off the click feature
             removeBookmarkButton.isUserInteractionEnabled = false
-            //tıklama özelliğinim açma
+            //turn on my click feature
             addBookmarkButton.isUserInteractionEnabled = true
         }
      
@@ -90,17 +83,10 @@ private extension DetailViewController{
 }
 extension DetailViewController:DetailViewModelViewProtocol{
     func didCellItemFetch() {
-        //
+        
         DispatchQueue.main.async {
             self.viewDidLoad()
         }
     }
     
-    func showEmptyView() {
-        //
-    }
-    
-    func hideEmptyView() {
-        //
-    }
 }

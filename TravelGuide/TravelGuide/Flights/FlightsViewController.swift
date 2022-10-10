@@ -45,7 +45,6 @@ extension FlightsViewController:FlightsViewModelViewProtocol{
         model.viewModel = vm
         vc.viewModel = vm
         vc.modalPresentationStyle = .fullScreen
-       // navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
         
     }
@@ -80,17 +79,14 @@ extension FlightsViewController:UITableViewDelegate{
 }
 extension FlightsViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count boytut\(viewModel.numberOfItems())")
         return viewModel.numberOfItems()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightsCell", for: indexPath) as! FlightsTableViewCell
         let cellModel = viewModel.getModel(at: indexPath.row)
-      //  cell.decriptionLabel.text = cellModel.title
         cell.flightsTitle.text = cellModel.title! + String(cellModel.id!)
         cell.flightsDescriptions.text = cellModel.description
-        
         cell.flightsImage.image = UIImage(named: cellModel.imageUrl!)
         return cell
     }

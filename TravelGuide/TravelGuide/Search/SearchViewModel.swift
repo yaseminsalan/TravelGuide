@@ -1,14 +1,11 @@
 //
 //  SearchViewModel.swift
 //  TravelGuide
-//
-//  Created by Amarena Software on 6.10.2022.
-//
 
 import Foundation
 //We notified the View with the delegate structure
 protocol SearchViewModelViewProtocol:AnyObject{
-    //view e haber verir
+    //informs view
     func didCellItemFetch()
     func showEmptyView()
     func hideEmptyView()

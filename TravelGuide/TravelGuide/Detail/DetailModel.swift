@@ -25,9 +25,8 @@ class DetailModel{
  
     func fetchData(){
         
-      //coreData ile kayıt edilen verilerin içinde gelen verinin id si aranır var ise buton görünürlüğü ayarlanır
+      //The id of the incoming data is searched in the data recorded with coreData, if any, the button visibility is set.
         if  AppDelegate.sharedAppDelegate.coreDataStack.bookmarkFetchData(id: String(detailItem.id!)){
-            print("***true değeri döndü")
             detailItem.bookmarksControl = true
         }else{
             detailItem.bookmarksControl = false

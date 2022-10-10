@@ -8,21 +8,14 @@ import Alamofire
 
 class HomeViewController: UIViewController {
     
-    
-    @IBOutlet weak var collectionView: UICollectionView!
     private let viewModel = HomeViewModel()
-  
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var hotelsButton: UIButton!
     @IBOutlet weak var flightsButton: UIButton!
-    
     @IBAction func flightsButton(_ sender: Any) {
         if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FlightsStoryboard") as? FlightsViewController
                 {
-                    
-           // vc.modalPresentationStyle = .fullScreen
             navigationController?.pushViewController(vc, animated: true)
-                  //  present(vc, animated: true)
                  
                 }
     }
@@ -65,13 +58,8 @@ private extension HomeViewController{
     
 }
 extension HomeViewController:HomeViewModelViewProtocol{
-    
-    
-   
-    
     func navigateToDetail(_ detailItem: DetailCellViewModel) {
-        //yönlendirilen sayfa
-        
+        //redirected page for screen details
         let vc = DetailViewController()
        
         let model = DetailModel(detailItem: detailItem)
@@ -79,7 +67,6 @@ extension HomeViewController:HomeViewModelViewProtocol{
         model.viewModel = vm
         vc.viewModel = vm
         vc.modalPresentationStyle = .fullScreen
-        //navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
         
     }
@@ -93,11 +80,11 @@ extension HomeViewController:HomeViewModelViewProtocol{
     }
     
     func showEmptyView() {
-        //todo
+        
     }
     
     func hideEmptyView() {
-        //TODO
+    
     }
     
    
@@ -119,6 +106,8 @@ extension HomeViewController:UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopPickCell", for: indexPath) as! HomeTopPickCollectionViewCell
         let cellModel = viewModel.getModel(at: indexPath.row)
         cell.decriptionLabel.text = cellModel.title
+        cell.categoryLabel.text = cellModel.description
+        cell.articleImage.image = UIImage(named: cellModel.imageUrl!)
         return cell
     }
     
@@ -131,10 +120,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let screenHeight = screenSize.height
         return CGSize(width: (screenWidth*0.5), height:(screenWidth*0.5));
     }
-    
-   /*func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-    }*/
  
 }
 

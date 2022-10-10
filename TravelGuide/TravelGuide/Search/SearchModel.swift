@@ -1,9 +1,7 @@
 //
 //  SearchModel.swift
 //  TravelGuide
-//
-//  Created by Amarena Software on 6.10.2022.
-//
+
 
 import Foundation
 import Alamofire
@@ -24,13 +22,13 @@ class SearchModel{
     var searchFlightsItemList:[Datum] = []
     
     
-    //dönüştüme işlemini supfunksiyona atadık
+    //conversion process
     private func transformFlightsToCellModel(_ flights:[Datum])->[SearchCellViewModel]{
         
         return flights.map{.init(id:$0.price,title:$0.destination,description: $0.destination,imageUrl: $0.imageUrl)}
     }
     
-    //dönüştüme işlemini supfunksiyona atadık
+    //conversion process
     private func transformHotelsToCellModel(_ hotels:[EntityHotel])->[SearchCellViewModel]{
         
         return hotels.map{.init(id:Int($0.destinationId!),title:$0.name,description: $0.caption,imageUrl: $0.imageUrl)}

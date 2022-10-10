@@ -1,9 +1,7 @@
 //
 //  CoreDataStack.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 4.10.2022.
-//
+
 
 import Foundation
 import CoreData

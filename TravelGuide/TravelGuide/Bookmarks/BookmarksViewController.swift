@@ -1,9 +1,6 @@
 //
 //  BookmarksViewController.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 4.10.2022.
-//
 
 import UIKit
 
@@ -37,8 +34,6 @@ private extension BookmarksViewController{
 extension BookmarksViewController:BookmarksViewModelViewProtocol{
     func navigateToDetail(_ detailItem: DetailCellViewModel) {
  
-        //yönlendirilen sayfa
-        
         let vc = DetailViewController()
        
         let model = DetailModel(detailItem: detailItem)
@@ -46,7 +41,6 @@ extension BookmarksViewController:BookmarksViewModelViewProtocol{
         model.viewModel = vm
         vc.viewModel = vm
         vc.modalPresentationStyle = .fullScreen
-        //navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
         
     }

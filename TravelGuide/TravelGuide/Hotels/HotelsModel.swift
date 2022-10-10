@@ -1,9 +1,7 @@
 //
 //  HotelsModel.swift
 //  TravelGuide
-//
-//  Created by amarenasoftware on 3.10.2022.
-//
+
 
 import Foundation
 import Alamofire
