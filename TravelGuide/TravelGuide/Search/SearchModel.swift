@@ -13,22 +13,71 @@ protocol SearchModelProtocol:AnyObject{
 }
 
 class SearchModel{
+
+
+    var hotelsSearch:[EntityHotel] = []
     
     //Notifies ViewModel
-    weak var delegateSearchFlights:SearchModelProtocol?
+    weak var delegateSearch:SearchModelProtocol?
     var searchList:[SearchCellViewModel] = []
     var searchflights:[Datum] = []
     var searchFlightsItemList:[Datum] = []
     
     
-    func filterUpdateData(filterdata:[SearchCellViewModel]){
-        searchList = filterdata
-        if searchList.count>0{
-            self.delegate?.didSearchFetchProcessFinish(true)
+    //dönüştüme işlemini supfunksiyona atadık
+    private func transformFlightsToCellModel(_ flights:[Datum])->[SearchCellViewModel]{
+        
+        return flights.map{.init(id:$0.price,title:$0.destination,description: $0.destination,imageUrl: $0.imageUrl)}
+    }
+    
+    //dönüştüme işlemini supfunksiyona atadık
+    private func transformHotelsToCellModel(_ hotels:[EntityHotel])->[SearchCellViewModel]{
+        
+        return hotels.map{.init(id:Int($0.destinationId!),title:$0.name,description: $0.caption,imageUrl: $0.imageUrl)}
+    }
+    func filterUpdateData(selectButton:String,textDidChange searchText: String){
+        if (searchText.count >= 3){
+            if selectButton == "flights"{
+                searchList.removeAll()
+                let timerFlights = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { [self] timerFlights in
+                    
+                    timerFlights.invalidate()
+                    searchList = transformFlightsToCellModel(searchflights).filter{$0.title!.lowercased().contains(searchText.lowercased())}
+                    if searchList.count>0{
+                        self.delegateSearch?.didSearchFetchProcessFinish(true)
+                    }
+                    else{
+                        self.delegateSearch?.didSearchFetchProcessFinish(false)
+                    }
+              
+                }
+                
+             
+            }
+            else if (selectButton == "hotels"){
+               
+                searchList.removeAll()
+                let timerHotels = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [self] timerHotels in
+                    
+                    timerHotels.invalidate()
+                    
+                    searchList = transformHotelsToCellModel(hotelsSearch).filter{$0.title!.lowercased().contains(searchText.lowercased())}
+                  
+                    if hotelsSearch.count>0{
+                        self.delegateSearch?.didSearchFetchProcessFinish(true)
+                    }
+                    else{
+                        self.delegateSearch?.didSearchFetchProcessFinish(false)
+                    }
+              
+                }
+            }else{
+                self.delegateSearch?.didSearchFetchProcessFinish(false)
+            }
+        }else{
+            self.delegateSearch?.didSearchFetchProcessFinish(false)
         }
-        else{
-            self.delegate?.didSearchFetchProcessFinish(false)
-        }
+       
         
     }
     func fetchFlightsSearchData(){
@@ -70,9 +119,7 @@ class SearchModel{
     
     
     
-    //Notifies ViewModel
-    weak var delegate:SearchModelProtocol?
-    var hotelsSearch:[EntityHotel] = []
+
     func fetchHotelsSearchData(){
          
         

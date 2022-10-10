@@ -6,37 +6,44 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    private let viewModel = SearchViewModel()
+    var buttonTitleControl:String="flights"
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var linesLeftLabel: UILabel!
     @IBOutlet weak var searchTableView: UITableView!
-    
     @IBOutlet weak var linesTrailingLabel: UILabel!
     @IBOutlet weak var flightsButton: UIButton!
-    
     @IBOutlet weak var hotelsButton: UIButton!
-    
     @IBAction func flightsButton(_ sender: Any) {
         linesLeftLabel.isHidden = false
         linesTrailingLabel.isHidden = true
-        
-        
-        viewModel.getDataUpdate(filterdata: [])
-        // self.searchTableView.reloadData()
-        
+        buttonTitleControl = "flights"
+        searchTextField.text = ""
+        searchTextField.placeholder = "Search Flights"
+        searchTextField.resignFirstResponder()
+        tableViewVisibilityControl()
+
     }
     
+   
     @IBAction func hotelsButton(_ sender: Any) {
         linesLeftLabel.isHidden = true
         linesTrailingLabel.isHidden = false
+        buttonTitleControl = "hotels"
+        searchTextField.text = ""
+        searchTextField.resignFirstResponder()
+        searchTextField.placeholder = "Search Hotel"
+        tableViewVisibilityControl()
     }
     
-    private let viewModel = SearchViewModel()
-   
-   
+
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+            viewModel.getDataUpdate(selectButton: buttonTitleControl, textDidChange: textField.text!)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -44,7 +51,6 @@ class SearchViewController: UIViewController {
         viewModel.viewDelegateSearch = self
         
         viewModel.didViewLoad()
-        // Do any additional setup after loading the view.
     }
     
 
@@ -56,6 +62,7 @@ private extension SearchViewController{
         linesTrailingLabel.isHidden = true
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        searchTextField.addTarget(self, action: #selector(SearchViewController.textFieldDidChange(_:)), for: .editingChanged)
      
      
     }
@@ -123,7 +130,11 @@ extension SearchViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchTableViewCell
-      
+        let cellModel = viewModel.getModel(at: indexPath.row)
+        cell.searchTitle.text = cellModel.title
+        cell.searchDescription.text = cellModel.description
+
+        cell.searchImage.image = UIImage(named: cellModel.imageUrl ?? "Image1" )
         return cell
     }
     
@@ -131,4 +142,5 @@ extension SearchViewController:UITableViewDataSource{
     
     
 }
+
 

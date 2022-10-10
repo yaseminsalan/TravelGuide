@@ -23,7 +23,7 @@ class SearchViewModel{
     
     init(){
         //We have delegated the model in Model to receive news from Model
-        modelSearch.delegate = self
+        modelSearch.delegateSearch = self
     }
     
     //Informs us that the ViewController is loaded and we can now pull data from the API and perform operations.
@@ -38,8 +38,8 @@ class SearchViewModel{
     func numberOfItems()->Int{
         return modelSearch.searchList.count
     }
-    func getDataUpdate(filterdata:[SearchCellViewModel]){
-        modelSearch.filterUpdateData(filterdata: filterdata)
+    func getDataUpdate(selectButton:String,textDidChange searchText: String){
+        modelSearch.filterUpdateData(selectButton:selectButton,textDidChange:searchText)
 
     }
     func getModel(at index:Int) -> SearchCellViewModel{
